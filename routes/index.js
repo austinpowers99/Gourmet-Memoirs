@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/auth/google', passport.authenticate(
-  // Which passport strategy is being used?
   'google',
   {
   scope: ['profile', 'email'],
@@ -27,6 +26,6 @@ router.get('logout', function(req, res) {
   req.logout(function() {
     res.redirect('/Gourmet Memoirs');
   });
-})
+});
 
 module.exports = router;
