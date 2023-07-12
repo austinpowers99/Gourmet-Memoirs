@@ -11,16 +11,22 @@ router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
   'google',
   {
-    scope: ['profile', 'email'],
+  scope: ['profile', 'email'],
   }
 ));
 
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/Gourmet Memoirs',
-    failureRedirect: '/Gourmet Memoirs'
+  successRedirect: '/Gourmet Memoirs',
+  failureRedirect: '/Gourmet Memoirs'
   }
 ));
+
+router.get('logout', function(req, res) {
+  req.logout(function() {
+    res.redirect('/Gourmet Memoirs');
+  });
+})
 
 module.exports = router;
