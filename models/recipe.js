@@ -6,8 +6,10 @@ const memoirSchema = new Schema ({
     recipeName: String,
     totalTime: Number,
     difficulty: String,
-    yield: Number,
-    recipe: String
+    yield: String,
+    recipe: String,
 }, {
     timestamps:true
 });
+
+module.exports = mongoose.model('Recipe', recipeSchema);
