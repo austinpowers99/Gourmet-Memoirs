@@ -20,15 +20,13 @@
   
       <tbody>
         <% reipe.difficulty.forEach(function(r) { %>
-            <!-- .toLocaleDateString() provides a more friendly date format -->
-            <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
           </tr>
         <% }); %>
       </tbody>
   <% } else { %>
-    <h5>No Ratings Yet</h5>
+    <h5>No rating added yet</h5>
   <% } %>
     
 <%- include('../partials/footer') %>

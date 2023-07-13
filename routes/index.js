@@ -17,14 +17,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-  successRedirect: '/Gourmet Memoirs',
-  failureRedirect: '/Gourmet Memoirs'
+  successRedirect: '/',
+  failureRedirect: '/'
   }
 ));
 
-router.get('logout', function(req, res) {
+router.get('/logout', function(req, res) {
   req.logout(function() {
-    res.redirect('/Gourmet Memoirs');
+    res.redirect('/');
   });
 });
 

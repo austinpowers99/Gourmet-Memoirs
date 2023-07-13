@@ -2,9 +2,9 @@ const Recipe = require('../models/recipe');
 
 module.exports = {
     index,
+    show,
     create,
-    new: newRecipe,
-    show
+    new: newRecipe
 };
 
 async function index(req, res) {
@@ -12,22 +12,24 @@ async function index(req, res) {
     res.render('recipes/index', { title: 'All Recipes', recipes });
 }
 
+async function show(req, res) {
+    const recipe = await Recipe.findById(req.params.id);
+    res.render('recipes/show', { title: 'Recipe Details', recipe});
+}
+
 async function create(req, res) {
     const Recipe = require('/models/recipe');
-
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
     try {
-        await Recipe.create(req.body);
-        res.redirect('/recipes/new');
+        const recipe = await Recipe.create(req.body);
+        res.redirect(`/recipes/${recipe._id}`);
     } catch (err) {
         res.render('recipes/new', { errorMsg: err.message });
     }
 }
 
 function newRecipe(req, res) {
-    res.render('recipes/new', { errorMsg: '' });
-}
-
-async function show(req, res) {
-    const recipe = await Recipe.findById(req.params.id);
-    res.render('books/show', { title: 'Recipe Details', recipe});
+    res.render('recipes/new', { title: 'Add New Recipe', errorMsg: '' });
 }

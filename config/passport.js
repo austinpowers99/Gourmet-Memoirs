@@ -3,7 +3,6 @@ const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
 
 passport.use(new GoogleStrategy(
-    // Configuration object
     {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_SECRET,
@@ -24,16 +23,18 @@ passport.use(new GoogleStrategy(
                 avatar: profile.photos[0].value,
             });
             return cb(null, user);
-        } catch (err) {
+        }   catch (err) {
             return cb(err);
         }
     }
 ));
 
+// provides a callback that Passport will call after the verify callback.
 passport.serializeUser(function(user, cb) {
     cb(null, user._id);
 });
 
+// provides a callback that Passport will call for every request when a user is logged in.
 passport.deserializeUser(async function(userId, cb) {
     cb(null, await User.findById(userId));
 });

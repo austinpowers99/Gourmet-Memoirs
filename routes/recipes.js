@@ -8,7 +8,5 @@ router.get('/', recipesCtrl.index);
 router.get('/new', recipesCtrl.new);
 // GET /recipes/:id (show functionality) MUST be below new route
 router.get('/:id', recipesCtrl.show);
-// POST /recipes
-router.post('/', recipesCtrl.create);
 
 module.exports = router;
