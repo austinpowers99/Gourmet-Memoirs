@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema ({
@@ -13,3 +12,18 @@ const recipeSchema = new Schema ({
 });
 
 module.exports = mongoose.model('Recipe', recipeSchema);
+
+const reviewSchema = new Schema ({
+    review: {
+        type: String,
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    avatar: String
+    }, {
+        timestamps: true
+});

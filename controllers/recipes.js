@@ -2,19 +2,14 @@ const Recipe = require('../models/recipe');
 
 module.exports = {
     index,
-    show,
     create,
-    new: newRecipe
+    new: newRecipe,
+    show,
 };
 
 async function index(req, res) {
     const recipes = await Recipe.find({});
     res.render('recipes/index', { title: 'All Recipes', recipes });
-}
-
-async function show(req, res) {
-    const recipe = await Recipe.findById(req.params.id);
-    res.render('recipes/show', { title: 'Recipe Details', recipe});
 }
 
 async function create(req, res) {
@@ -32,4 +27,9 @@ async function create(req, res) {
 
 function newRecipe(req, res) {
     res.render('recipes/new', { title: 'Add New Recipe', errorMsg: '' });
+}
+
+async function show(req, res) {
+    const recipe = await Recipe.findById(req.params.id);
+    res.render('recipes/show', { title: 'Recipe Details', recipe});
 }

@@ -1,4 +1,5 @@
 const passport = require('passport');
+
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
 
@@ -13,7 +14,6 @@ passport.use(new GoogleStrategy(
         // A user has logged in with OAuth
         try {
             let user = await User.findOne({ googleId: profile.id });
-            // Existing user found
             if (user) return cb(null, user);
             // We have a new user via OAuth!
             user = await User.create({
