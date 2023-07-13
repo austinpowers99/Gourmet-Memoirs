@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Name: </div>
+    <div><%= recipe.name %></div>
+    <div>Total cook time: </div>
+    <div><%= recipe.totalTime %></div>
+    <div>Difficulty: </div>
+    <div><%= recipe.difficulty %></div>
+
+    <button type="submit">Add To Index</button>
+  
+    <label>Difficulty:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <input type="submit" value="Add Difficulty">
+  
+      <tbody>
+        <% reipe.difficulty.forEach(function(r) { %>
+            <!-- .toLocaleDateString() provides a more friendly date format -->
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td><%= r.content %></td>
+            <td><%= r.rating %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+  <% } else { %>
+    <h5>No Ratings Yet</h5>
+  <% } %>
+    
+<%- include('../partials/footer') %>

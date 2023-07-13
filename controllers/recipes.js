@@ -8,7 +8,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const movies = await Recipe.find({});
+    const recipes = await Recipe.find({});
     res.render('recipes/index', { title: 'All Recipes', recipes });
 }
 

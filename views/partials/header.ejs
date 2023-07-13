@@ -9,7 +9,7 @@
 <body>
     <nav>
         <% if (user) { %>
-        <a href="/recipe" <%- title === 'All Recipes' ? 'class="active"' : '' %>>ALL RECIPES</a>
+          <a href="/recipe" <%- title === 'All Recipes' ? 'class="active"' : '' %>>ALL RECIPES</a>
           <a href="/recipe/new" <%- title === 'Add Recipe' ? 'class="active"' : '' %>>ADD NEW RECIPE</a>
           <a href="/logout">LOG OUT</a>
         <% } else { %>
@@ -17,4 +17,4 @@
         <% } %>
     </nav>
 <main>
-    <h1><%= Gourmet Memoirs %></h1>
+    <h1>Gourmet Memoirs</h1>
