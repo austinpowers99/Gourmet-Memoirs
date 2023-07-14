@@ -1,20 +1,15 @@
 <%- include('../partials/header') %>
 
-<table id="list">
-  <thead>
-    <tr>
-      <th>Recipe Name</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<h3>As my abuelita once said:
+  "I'm not a mess in the kitchen, I'm just creatively disorganized"
+</h3>
+
+<section id="list">
+  <ul>
     <% recipes.forEach(function(r) { %>
-      <tr>
-        <td><%= r.name %></td>
-        <td><a href="/recipes/<%= m._id %>">DETAILS</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
+      <li><a href="/recipes/<%= r._id %>"><%= r.title %></a></li>
+    <% }) %>
+  </ul>
+</section>
+
 <%- include('../partials/footer') %>

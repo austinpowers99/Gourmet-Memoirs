@@ -26,7 +26,7 @@ async function create(req, res) {
 }
 
 function newRecipe(req, res) {
-    res.render('recipes/new', { title: 'Add New Recipe', errorMsg: '' });
+    res.render('recipes/new', { title: 'Add Recipe', errorMsg: '' });
 }
 
 async function show(req, res) {
