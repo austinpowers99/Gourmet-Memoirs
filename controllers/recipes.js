@@ -5,6 +5,9 @@ module.exports = {
     create,
     new: newRecipe,
     show,
+    delete: deleteRecipe,
+    edit,
+    update,
 };
 
 async function index(req, res) {
@@ -13,7 +16,7 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-    const Recipe = require('/models/recipe');
+    const Recipe = require('/models/recipes');
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
@@ -32,4 +35,26 @@ function newRecipe(req, res) {
 async function show(req, res) {
     const recipe = await Recipe.findById(req.params.id);
     res.render('recipes/show', { title: 'Recipe Details', recipe});
+}
+
+async function deleteRecipe(req, res) {
+    try {
+        await Recipe.deleteOne({_id: req.params.id});
+        res.redirect('/recipes');
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+async function edit(req, res) {
+    const recipe = await Recipe.findById(req.params.id);
+    console.log(recipe);
+    res.render("recipes/edit", { recipe });
+  }
+
+async function update(req, res) {
+    req.body.done = !!req.body.done;
+
+    await Recipe.findById(req.params.id, req.body);
+    res.redirect(`/recipes/${req.params.id}`);
 }
