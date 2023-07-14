@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Featured Recipes</h2>
+<h2>Add your own!</h2>
 <form action="/recipes" method="POST">
     <label>Name:
         <input type="text" name="title">
@@ -8,25 +8,26 @@
     <label>Total time:
         <input type="text" name="total cook time">
     </label><br><br>
-    <label>Difficulty:
-        <input type="text" name="difficulty">
+    <label>Yield:
+        <input type="text" name="yield">
     </label><br><br>
-    <label>Categories
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Desserts">Dessert</option>
-            <option value="Snacks">Snacks</option>
-        </select>
+    <label>Ingredients:
+        <input type="text" name="ingredients">
     </label><br><br>
+    <label>Difficulty:</label>
+    <select name="rating">
+      <option value="1">Easy</option>
+      <option value="2">Medium</option>
+      <option value="3">Hard</option>
+    </select>
+    <input type="submit" value="Add Difficulty">
+    </label><br><br>
+    <label>Recipe:
+        <input type="text" name="recipe">
+    </label><br><br>
+    
     <button type="submit">Add Recipe</button>
 </form>
 <p><%= errorMsg %></p>
 
 <%- include('../partials/footer') %>
-
-recipeName: String,
-    totalTime: Number,
-    difficulty: String,
-    yield: String,
-    recipe: String,
