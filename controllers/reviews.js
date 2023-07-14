@@ -22,7 +22,7 @@ async function create(req, res) {
 }
 
 async function deleteReview(req, res) {
-    const recipe = await Recipe.findOne({ 'reviews._id': req.params.id, 'reviews.user': req.user._id})
+    const recipe = await Recipe.findOne({ 'reviews._id': req.params.id, 'reviews.user': req.user._id })
 
     if (!recipe) return res.redirect('/recipes'); //update when you know WHERE to redirect.
 
