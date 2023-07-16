@@ -3,10 +3,10 @@
 <h2>Add your own!</h2>
 <form action="/recipes" method="POST">
     <label>Name:
-        <input type="text" name="title">
+        <input type="text" name="recipeName">
     </label><br><br>
     <label>Total time:
-        <input type="text" name="total cook time">
+        <input type="number" name="totalTime">
     </label><br><br>
     <label>Yield:
         <input type="text" name="yield">
@@ -15,18 +15,16 @@
         <input type="text" name="ingredients">
     </label><br><br>
     <label>Difficulty:</label>
-    <select name="rating">
-      <option value="1">Easy</option>
-      <option value="2">Medium</option>
-      <option value="3">Hard</option>
+    <select name="difficulty">
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
     </select>
-    <input type="submit" value="Add Difficulty">
     </label><br><br>
     <label>Recipe:
-        <input type="text" name="recipe">
+        <textarea name="content"></textarea>
     </label><br><br>
     
-    <form id="add-recipe-form" action="/recipes" method="POST"></form>
     <button type="submit">Add Recipe</button>
 </form>
 <p><%= errorMsg %></p>

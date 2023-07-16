@@ -5,18 +5,17 @@ module.exports = {
     create,
     new: newRecipe,
     show,
-    delete: deleteRecipe,
+    // delete: deleteRecipe,
     edit,
     update,
 };
 
 async function index(req, res) {
     const recipes = await Recipe.find({});
-    res.render('recipes/index', { title: 'All Recipes', recipes });
+    res.render('recipes/index', { title: 'Gourmet Mmeoirs', recipes });
 }
 
 async function create(req, res) {
-    const Recipe = require('/models/recipes');
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
@@ -24,7 +23,8 @@ async function create(req, res) {
         const recipe = await Recipe.create(req.body);
         res.redirect(`/recipes/${recipe._id}`);
     } catch (err) {
-        res.render('recipes/new', { errorMsg: err.message });
+       console.log(err)
+       res.render('recipes/new', { errorMsg: err.message });
     }
 }
 
@@ -34,22 +34,23 @@ function newRecipe(req, res) {
 
 async function show(req, res) {
     const recipe = await Recipe.findById(req.params.id);
-    res.render('recipes/show', { title: 'Recipe Details', recipe});
+    console.log(recipe)
+    res.render('recipes/show', { title: 'Recipe Detail', recipe });
 }
 
-async function deleteRecipe(req, res) {
-    try {
-        await Recipe.deleteOne({_id: req.params.id});
-        res.redirect('/recipes');
-    } catch (err) {
-        console.log(err)
-    }
-}
+// async function deleteRecipe(req, res) {
+//     try {
+//         await Recipe.deleteOne({_id: req.params.id});
+//         res.redirect('/');
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
 
 async function edit(req, res) {
     const recipe = await Recipe.findById(req.params.id);
     console.log(recipe);
-    res.render("recipes/edit", { recipe });
+    res.render('recipes/:id/edit', { recipe });
   }
 
 async function update(req, res) {

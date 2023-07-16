@@ -1,32 +1,35 @@
-const Recipe = require('../models/movie');
+const Recipe = require("../models/recipe");
 
 module.exports = {
-    create,
-    delete: deleteReview
+  create,
+  delete: deleteReview,
 };
 
 async function create(req, res) {
-    const recipe = await Recipe.findById(req.params.id);
+  const recipe = await Recipe.findById(req.params.id);
 
-    req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
 
-    recipe.reviews.push(req.body);
-    try {
-        await recipe.save();
-    } catch(err) {
-        console.log(err)
-    }
-    res.redirect(`/recipes/${recipe._id}`);
+  recipe.reviews.push(req.body);
+  try {
+      await recipe.save();
+  } catch (err) {
+      console.log(err);
+  }
+  res.redirect(`/recipes/${recipe._id}`);
 }
 
 async function deleteReview(req, res) {
-    const recipe = await Recipe.findOne({ 'reviews._id': req.params.id, 'reviews.user': req.user._id })
+  const recipe = await Recipe.findOne({
+    "reviews._id": req.params.id,
+    "reviews.user": req.user._id,
+});
+  console.log(recipe);
+  if (!recipe) return res.redirect("/recipes");const Recipe = require("../models/recipe");
+  recipe.reviews.remove({ _id: req.params.id });
 
-    if (!recipe) return res.redirect('/recipes'); //update when you know WHERE to redirect.
-
-    recipe.reviews.remove(req.params.id);
-    await recipe.save();
-    res.redirect(`/recipes/${book._id}`);
+  await recipe.save();
+  // Redirect back to home page
+  res.redirect(`/recipes/${recipe._id}`);
 }

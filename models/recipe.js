@@ -6,12 +6,11 @@ const recipeSchema = new Schema ({
     totalTime: Number,
     difficulty: String,
     yield: String,
+    ingredients: String,
     recipe: String,
 }, {
     timestamps:true
 });
-
-module.exports = mongoose.model('Recipe', recipeSchema);
 
 const reviewSchema = new Schema ({
     review: {
@@ -27,3 +26,5 @@ const reviewSchema = new Schema ({
     }, {
         timestamps: true
 });
+
+module.exports = mongoose.model('Recipe', recipeSchema);

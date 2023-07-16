@@ -9,9 +9,9 @@
 <body>
     <nav>
         <% if (user) { %>
-          <a href="/recipes" <%- title === 'Home Page' ? 'class="active"' : '' %>>HOME</a>
-          <a href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>>ALL RECIPES</a>
-          <a href="/recipes/new" <%- title === 'Add Recipe' ? 'class="active"' : '' %>>ADD NEW RECIPE</a>
+          <a href="/">HOME</a>
+          <a href="/recipes">ALL RECIPES</a>
+          <a href="/recipes/new">ADD NEW RECIPE</a>
           <a href="/logout">LOG OUT</a>
         <% } else { %>
           <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

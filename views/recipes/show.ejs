@@ -1,63 +1,30 @@
 <%- include('../partials/header') %>
 
-<h1><%= recipe.title %></h1>
-<p>By <%= recipe.user.name %></p>
+<section id="home-page">
+    <div>Name: </div>
+    <div><%= recipe.name %></div>
+    <div>Main ingredients: </div>
+    <div><%= recipe.mainIngredients %></div>
+    <div>Total time: </div>
+    <div><%= recipe.totalTime %></div>
+    <div>Difficulty: </div>
+    <div><%= recipe.difficulty %></div>
+</section>
 
-<h3>Ingredients</h3>
-<ul>
-  <% recipe.ingredients.forEach(function(ingredient, index) { %>
-    <li><%= ingredient %> - <%= recipe.amount[index] %></li>
-  <% }); %>
-</ul>
-
-<h3>How to:</h3>
-<p><%= recipe.howTo %></p>
-
-<div class="comments"> 
-  <% if (recipe.reviews.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Review</th>
-          <th>User</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% recipe.reviews.forEach(function(review) { %>
-          <tr>
-            <td><%= review.createdAt.toLocaleDateString() %></td>
-            <td><%= review.content %></td>
-            <td class="review-user"><%= review.userName %></td>
-            <td>
-              <% if (user?._id.equals(review.user._id)) { %>
-                <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
-                </form>
-              <% } %>
-            </td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h5>No Reviews Yet</h5>
-  <% } %>
-</div>
-
-<% if (user && user._id.equals(recipe.user._id)) { %>
-  <div class="recipe-buttons">
-    <button><a href="/recipes/<%= recipe._id %>/edit" class="btn btn-warning">Edit</a></button>
-    <form id="delete" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete">
-    </form>
-  </div>
-
-  <form id="add-review-form" method="POST" action="/recipes/<%= recipe._id %>/reviews">
+<br><br><h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+    action="/recipe/<%= recipe._id %>/reviews">
     <label>Review:</label>
     <textarea name="content"></textarea>
-    <input type="submit" value="Add Review">
-  </form>
-<% }; %>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+    </select>
+  <input type="submit" value="Add Review">
+</form>
 
 <%- include('../partials/footer') %>
