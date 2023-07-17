@@ -7,6 +7,7 @@ module.exports = {
     show,
     delete: deleteRecipe,
     edit,
+    update
 };
 
 async function index(req, res) {
@@ -49,6 +50,24 @@ async function deleteRecipe(req, res) {
 
 async function edit(req, res) {
     const recipe = await Recipe.findById(req.params.id);
-    console.log(recipe);
-    res.render('recipes/:id/edit', { recipe });
-  }
+    res.render('recipes/edit', { recipe });
+}
+
+async function update(req, res, next) {
+    try {
+        const event = await Event.findById(req.params.id);
+
+        for (let key in req.body) {
+            if (event[key] !== req.body[key]) {
+                event[key] = req.body[key];
+            }
+            console.log(event[key]);
+            console.log(`req.body[${key}]= ${req.body[key]}`);
+        }
+        await event.save();
+        res.redirect(`/recipes/${event._id}`);
+    }
+    catch (err) {
+        next(err);
+    }
+}

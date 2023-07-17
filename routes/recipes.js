@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const recipesCtrl = require('../controllers/recipes');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
-// all endpaths have /recipes
-
+// all endpaths already have /recipes
  
 // GET /recipes
 router.get('/', recipesCtrl.index);
@@ -15,6 +14,8 @@ router.get('/:id', recipesCtrl.show);
 router.get('/:id/edit', recipesCtrl.edit)
 // POST /recipes
 router.post('/', recipesCtrl.create);
+// PUT /recipes/:id
+router.put('/:id', recipesCtrl.update);
 // DELETE /recipes/:id
 router.delete('/:id', recipesCtrl.delete)
 // POST(EDIT)

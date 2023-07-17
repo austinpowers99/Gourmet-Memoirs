@@ -3,6 +3,8 @@
 <section id="show-page">
     <div>Name: </div>
     <div><%= recipe.recipeName %></div>
+    <div>Servings: </div>
+    <div><%= recipe.servings %></div>
     <div>Main ingredients: </div>
     <div><%= recipe.ingredients %></div>
     <div>Total time: </div>
@@ -16,10 +18,7 @@
     class="delete-form" method="POST">
     <button type="submit">Remove recipe</button>
 </form>
-<form action="/recipes/<%= recipe._id %>?_method=PUT"
-    class="update-form" method="POST">
-    <button type="submit">Edit recipe</button>
-</form>
+    <a href="/recipes/<%= recipe.id %>/edit">Edit recipe</a>
 
 <br><br><h2>Reviews</h2>
 <form id="add-review-form" method="POST"
