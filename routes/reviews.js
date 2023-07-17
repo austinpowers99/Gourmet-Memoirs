@@ -4,8 +4,8 @@ const reviewsCtrl = require('../controllers/reviews');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // POST 
-router.get('/recipes/:id/reviews', ensureLoggedIn, reviewsCtrl.create);
+router.post('/recipes/:id/reviews', ensureLoggedIn, reviewsCtrl.create);
 // DELETE
-router.delete('/recipes/:id', ensureLoggedIn, reviewsCtrl.delete);
+router.delete('/reviews/:id', ensureLoggedIn, reviewsCtrl.delete);
 
 module.exports = router;

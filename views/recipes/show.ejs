@@ -1,19 +1,29 @@
 <%- include('../partials/header') %>
 
-<section id="home-page">
+<section id="show-page">
     <div>Name: </div>
-    <div><%= recipe.name %></div>
+    <div><%= recipe.recipeName %></div>
     <div>Main ingredients: </div>
-    <div><%= recipe.mainIngredients %></div>
+    <div><%= recipe.ingredients %></div>
     <div>Total time: </div>
     <div><%= recipe.totalTime %></div>
     <div>Difficulty: </div>
     <div><%= recipe.difficulty %></div>
+    <div>Recipe: </div>
+    <div><%= recipe.recipe %></div>
 </section>
+<form action="/recipes/<%= recipe._id %>?_method=DELETE"
+    class="delete-form" method="POST">
+    <button type="submit">Remove recipe</button>
+</form>
+<form action="/recipes/<%= recipe._id %>?_method=PUT"
+    class="update-form" method="POST">
+    <button type="submit">Edit recipe</button>
+</form>
 
 <br><br><h2>Reviews</h2>
 <form id="add-review-form" method="POST"
-    action="/recipe/<%= recipe._id %>/reviews">
+    action="/recipes/<%= recipe._id %>/reviews">
     <label>Review:</label>
     <textarea name="content"></textarea>
     <label>Rating:</label>

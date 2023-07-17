@@ -13,18 +13,24 @@ const recipeSchema = new Schema ({
 });
 
 const reviewSchema = new Schema ({
-    review: {
+    content: {
         type: String,
-    },
-    user: {
+        required: true
+      },
+      rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        default: 5
+      },
+      user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    },
-    userName: String,
-    avatar: String
+      },
+      userName: String
     }, {
-        timestamps: true
-});
+      timestamps: true
+    });
 
 module.exports = mongoose.model('Recipe', recipeSchema);

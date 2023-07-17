@@ -15,8 +15,8 @@ router.get('/:id', recipesCtrl.show);
 router.get('/:id/edit', recipesCtrl.edit)
 // POST /recipes
 router.post('/', recipesCtrl.create);
-// // DELETE /recipes/:id
-// router.delete('/:id', recipesCtrl.delete)
+// DELETE /recipes/:id
+router.delete('/:id', recipesCtrl.delete)
 // POST(EDIT)
 
 

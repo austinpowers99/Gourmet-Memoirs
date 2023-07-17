@@ -2,7 +2,7 @@ const Recipe = require("../models/recipe");
 
 module.exports = {
   create,
-  delete: deleteReview,
+  delete: deleteReview
 };
 
 async function create(req, res) {
@@ -23,11 +23,10 @@ async function create(req, res) {
 async function deleteReview(req, res) {
   const recipe = await Recipe.findOne({
     "reviews._id": req.params.id,
-    "reviews.user": req.user._id,
+    "reviews.user": req.user._id
 });
-  console.log(recipe);
-  if (!recipe) return res.redirect("/recipes");const Recipe = require("../models/recipe");
-  recipe.reviews.remove({ _id: req.params.id });
+  if (!recipe) return res.redirect("/");
+  recipe.reviews.remove(req.params.id);
 
   await recipe.save();
   // Redirect back to home page

@@ -1,22 +1,19 @@
 <%- include('../partials/header') %>
 
-<h3>As my abuelita once said:
+<h2>As my abuelita once said:
   "I'm not a mess in the kitchen, I'm just creatively disorganized"
-</h3>
+</h2>
 
 <table id="list">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Difficulty</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <% recipes.forEach(function(r) { %>
       <tr>
-        <td><%= r.title %></td>
-        <td><%= r.difficulty %></td>
+        <td><%= r.recipeName %></td>
         <td><a href="/recipes/<%= r._id %>">DETAILS</a></td>
       </tr>
       <% }); %>
@@ -25,6 +22,3 @@
 </section>
 
 <%- include('../partials/footer') %>
-
-
-<button type="submit">Delete Recipe</button>
