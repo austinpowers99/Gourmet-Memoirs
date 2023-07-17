@@ -2,22 +2,22 @@
 
 <form>
     <label>Name:
-        <input type="text" name="recipeName">
+        <input type="text" name="recipeName" value="<%= recipe.recipeName %>">
     </label><br>
     <label>Servings:
-        <input type="text" name="servings">
+        <input type="text" name="servings" value="<%= recipe.servings %>">
     </label><br>
     <label>Total time in mins:
-        <input type="text" name="totalTime">
+        <input type="text" name="totalTime" value="<%= recipe.totalTime %>">
     </label><br>
     <label>Ingredients:
-        <textarea name="ingredients"></textarea>
+        <textarea name="ingredients" value="<%= recipe.ingredients %>"></textarea>
     </label><br>
     <label>Recipe:
-        <textarea name="recipe"></textarea>
+        <textarea name="recipe" value="<%= recipe.recipe %>"></textarea>
     </label><br>
     <label>Difficulty:</label>
-    <select name="difficulty">
+    <select name="difficulty" value="<%= recipe.difficulty %>">
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
         <option value="Hard">Hard</option>

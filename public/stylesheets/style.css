@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
 * {
   box-sizing: border-box;
-  color: #030303;
+  font-family: 'Bodoni Moda', serif;
+  color: #000000;
 }
 
 body {
   margin: 0;
   height: 100vh;
   display: grid;
+  color: rgba(127, 25, 185, 0.8);
   grid-template-rows: 50px 1fr;
   grid-template-areas: 
     "nav"
@@ -38,7 +41,7 @@ nav > a {
 
 nav > a:hover:not(.active) {
   color: white;
-  background-color: #424748;
+  background-color: #495045;
 }
 
 .login {
@@ -50,4 +53,13 @@ nav > a:hover:not(.active) {
 
 .login img {
   height: 30px;
+}
+
+#homePage {
+  font-size: 25px;
+  padding-bottom: 20px;
+  font: 'Bodoni Moda', serif;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-image: url('brooke-lark-wMzx2nBdeng-unsplash.jpg');
 }
