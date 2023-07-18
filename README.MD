@@ -36,6 +36,7 @@ Logged out Page
 
 # ♟️ Code Preview
 
+<%- include('../partials/header') %>
 <h2 class="display-5" id="addNew">Add your own!</h2>
 <form action="/recipes" method="POST">
     <label>Name:
@@ -64,6 +65,7 @@ Logged out Page
     <button type="submit">Add Recipe</button>
 </form>
 <p><%= errorMsg %></p>
+<%- include('../partials/footer') %>
 
 # 🫧 Getting Started:
 Click the link  👉🏼  [Gourmet Memoirs](https://gourmet-memoirs-cba51dde722d.herokuapp.com/)
