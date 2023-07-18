@@ -1,6 +1,6 @@
 # 🌶️🥖 Gourmet Memoirs 🥕🧀
 
-Welcome to Gourmet Memoirs, the ultimate app for food enthusiasts and home cooks to cherish their culinary experiences, preserve treasured recipes, and discover delightful new dishes. Whether you're a seasoned chef or an aspiring cook, Gourmet Memoirs is here to elevate your cooking adventures to new heights.
+Welcome to Gourmet Memoirs, a web app for food enthusiasts and home cooks to cherish their culinary experiences, preserve treasured recipes, and discover delightful new dishes. Whether you're a seasoned chef or an aspiring cook, Gourmet Memoirs is here to elevate your cooking adventures to new heights.
 
 # Features:
 
