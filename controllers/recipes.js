@@ -50,14 +50,13 @@ async function deleteRecipe(req, res) {
 
 async function edit(req, res) {
     const recipe = await Recipe.findById(req.params.id);
-    console.log(recipe);
     res.render('recipes/edit', { recipe });
 }
 
 async function update(req, res) {
     try {
        await Recipe.findByIdAndUpdate(req.params.id, {
-        name: req.body.name,
+        name: req.body.recipeName,
         servings: req.body.servings,
         totalTime: req.body.totalTime,
         ingredients: req.body.ingredients,
