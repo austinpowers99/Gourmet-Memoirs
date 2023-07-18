@@ -40,8 +40,8 @@ nav > a {
 }
 
 nav > a:hover:not(.active) {
-  color: white;
-  background-color: #495045;
+  color: rgb(100, 3, 3);
+  background-color: #d0ae04;
 }
 
 .login {
@@ -61,5 +61,35 @@ nav > a:hover:not(.active) {
   font: 'Bodoni Moda', serif;
   font-weight: bold;
   color: rgb(0, 0, 0);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+div {
   background-image: url('brooke-lark-wMzx2nBdeng-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+hr {
+  color: #e76413
 }
