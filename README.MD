@@ -8,7 +8,17 @@ Welcome to Gourmet Memoirs, a web app for food enthusiasts and home cooks to che
 - Create your own recipes, find new ones, and share them with those around you!
 
 ## Preview
-<img width="638" alt="Screenshot 2023-07-17 at 9.22.57 PM.png">
+Home & Login screen
+<img width="1103" alt="Screenshot 2023-07-17 at 9 22 57 PM 2" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/3b2f784f-4c7a-40d1-b0ad-27673978192d">
+
+Index Page
+<img width="1105" alt="Screenshot 2023-07-17 at 9 23 14 PM" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/49b456f3-5c84-40a2-8a72-44c6958b3f3e">
+
+Details page within the Index
+<img width="1103" alt="Screenshot 2023-07-17 at 9 24 02 PM" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/4c56917a-8387-4640-8099-4bb870e1a28c">
+
+Create a new recipe 
+<img width="1101" alt="Screenshot 2023-07-17 at 9 23 37 PM" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/8e94ab46-d375-4b6e-8185-ec9b766c3af2">
 
 # 💥 Technologies Used
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
