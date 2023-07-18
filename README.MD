@@ -8,6 +8,7 @@ Welcome to Gourmet Memoirs, a web app for food enthusiasts and home cooks to che
 - Create your own recipes, find new ones, and share them with those around you!
 
 # Preview
+/Users/sam/code/Projects/Gourmet-Memoirs/public/images/Screenshot 2023-07-17 at 9.22.57 PM.png
 
 
 # 💥 Technologies Used
