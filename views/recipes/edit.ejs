@@ -1,28 +1,30 @@
 <%- include('../partials/header') %>
 
-<form>
+<form action="/recipes" method="PUT">
     <label>Name:
         <input type="text" name="recipeName" value="<%= recipe.recipeName %>">
-    </label><br>
+    </label><br><br>
     <label>Servings:
         <input type="text" name="servings" value="<%= recipe.servings %>">
-    </label><br>
+    </label><br><br>
     <label>Total time in mins:
         <input type="text" name="totalTime" value="<%= recipe.totalTime %>">
-    </label><br>
+    </label><br><br>
     <label>Ingredients:
         <textarea name="ingredients" value="<%= recipe.ingredients %>"></textarea>
-    </label><br>
+    </label><br><br>
     <label>Recipe:
         <textarea name="recipe" value="<%= recipe.recipe %>"></textarea>
-    </label><br>
+    </label><br><br>
     <label>Difficulty:</label>
-    <select name="difficulty" value="<%= recipe.difficulty %>">
+    <select name="difficulty">
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
         <option value="Hard">Hard</option>
     </select>
-<button type="submit">Update recipe</button>
+    </label><br><br>
+    
+    <button type="submit">Update Recipe</button>
 </form>
 
 <%- include('../partials/footer') %>
