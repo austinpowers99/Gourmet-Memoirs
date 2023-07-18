@@ -34,44 +34,10 @@ Logged out Page
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
-# ♟️ Code Preview
-
-<%- include('../partials/header') %>
-<h2 class="display-5" id="addNew">Add your own!</h2>
-<form action="/recipes" method="POST">
-    <label>Name:
-        <input type="text" name="recipeName">
-    </label><br><br>
-    <label>Servings:
-        <input type="text" name="servings">
-    </label><br><br>
-    <label>Total time in mins:
-        <input type="text" name="totalTime">
-    </label><br><br>
-    <label>Ingredients:
-        <textarea name="ingredients"></textarea>
-    </label><br><br>
-    <label>Recipe:
-        <textarea name="recipe"></textarea>
-    </label><br><br>
-    <label>Difficulty:</label>
-    <select name="difficulty">
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
-    </select>
-    </label><br><br>
-    
-    <button type="submit">Add Recipe</button>
-</form>
-<p><%= errorMsg %></p>
-<%- include('../partials/footer') %>
-
 # 🫧 Getting Started:
 Click the link  👉🏼  [Gourmet Memoirs](https://gourmet-memoirs-cba51dde722d.herokuapp.com/)
 
 # ✨ Future updates & Icebox Items:
 - Add Add a schema for ingredients and another for allergy friendly recipes.
 - Add a Category section for easier search.
-- Add a section for All Reviews.
-- Make it more colorful.
+- Have a fully functional section for All Reviews.
