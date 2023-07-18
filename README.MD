@@ -2,17 +2,19 @@
 
 Welcome to Gourmet Memoirs, a web app for food enthusiasts and home cooks to cherish their culinary experiences, preserve treasured recipes, and discover delightful new dishes. Whether you're a seasoned chef or an aspiring cook, Gourmet Memoirs is here to elevate your cooking adventures to new heights.
 
-# Features:
+## Features:
 - Secure Login with Google OAuth.
 - User friendly display.
 - Create your own recipes, find new ones, and share them with those around you!
 
-# Preview
-
+## Preview
+<img width="638" alt="Screenshot 2023-07-17 at 9.22.57 PM.png">
 
 # 💥 Technologies Used
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![JSON](https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
