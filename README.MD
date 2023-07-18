@@ -2,12 +2,12 @@
 
 Welcome to Gourmet Memoirs, a web app for food enthusiasts and home cooks to cherish their culinary experiences, preserve treasured recipes, and discover delightful new dishes. Whether you're a seasoned chef or an aspiring cook, Gourmet Memoirs is here to elevate your cooking adventures to new heights.
 
-# ✨ Features:
+## ✨ Features:
 - Secure Login with Google OAuth.
 - User friendly display.
 - Create your own recipes, find new ones, and share them with those around you!
 
-# 💡 Preview
+## 💡 Preview
 Home screen
 <img width="1103" alt="Screenshot 2023-07-17 at 9 22 57 PM 2" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/3b2f784f-4c7a-40d1-b0ad-27673978192d">
 
@@ -35,7 +35,38 @@ Logged out Page
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 # ♟️ Code Preview
+<%- include('../partials/header') %>
 
+<h2 class="display-5" id="addNew">Add your own!</h2>
+<form action="/recipes" method="POST">
+    <label>Name:
+        <input type="text" name="recipeName">
+    </label><br><br>
+    <label>Servings:
+        <input type="text" name="servings">
+    </label><br><br>
+    <label>Total time in mins:
+        <input type="text" name="totalTime">
+    </label><br><br>
+    <label>Ingredients:
+        <textarea name="ingredients"></textarea>
+    </label><br><br>
+    <label>Recipe:
+        <textarea name="recipe"></textarea>
+    </label><br><br>
+    <label>Difficulty:</label>
+    <select name="difficulty">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
+    </label><br><br>
+    
+    <button type="submit">Add Recipe</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>
 
 # 🫧 Getting Started:
 Click the link  👉🏼  [Gourmet Memoirs](https://gourmet-memoirs-cba51dde722d.herokuapp.com/)
@@ -43,3 +74,5 @@ Click the link  👉🏼  [Gourmet Memoirs](https://gourmet-memoirs-cba51dde722d
 # ✨ Future updates & Icebox Items:
 - Add Add a schema for ingredients and another for allergy friendly recipes.
 - Add a Category section for easier search.
+- Add a section for All Reviews.
+- Make it more colorful.
