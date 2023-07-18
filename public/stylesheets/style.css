@@ -40,7 +40,7 @@ nav > a {
 }
 
 nav > a:hover:not(.active) {
-  color: rgb(100, 3, 3);
+  color: rgb(0, 0, 0);
   background-color: #d0ae04;
 }
 
