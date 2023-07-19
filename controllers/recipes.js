@@ -54,17 +54,22 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
-    try {
-       await Recipe.findByIdAndUpdate(req.params.id, {
-        name: req.body.recipeName,
+    console.log(req.body)
+    const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, {
+        recipeName: req.body.recipeName,
         servings: req.body.servings,
         totalTime: req.body.totalTime,
         ingredients: req.body.ingredients,
-        recipe: req.body.recipe
-       });
-        res.redirect('/recipes');
-    } catch(err) {
+        recipe: req.body.recipe,
+        difficulty: req.body.difficulty
+    })
+
+    try {
+      updatedRecipe.save();
+      res.redirect('/recipes');
+    }
+        catch(err) {
         console.log(err);
-        res.render('/recipes', { errorMsg: err.message});
+        res.redirect('/recipes', { errorMsg: err.message});
     }
 }
