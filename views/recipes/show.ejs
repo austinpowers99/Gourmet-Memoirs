@@ -14,13 +14,19 @@
     <div>Recipe: </div>
     <div><%= recipe.recipe %></div>
 </section>
+<br>
 <form action="/recipes/<%= recipe._id %>?_method=DELETE"
     class="delete-form" method="POST">
     <button type="submit">Remove recipe</button>
 </form>
-    <a href="/recipes/<%= recipe._id %>/edit">Edit recipe</a>
+<br>
+<form action="/recipes/<%= recipe._id %>/edit"
+     method="GET">
+    <button type="submit">Edit recipe</button>
+</form>
 
-<br><br><h2>Reviews</h2>
+<br><br>
+<h2>Reviews</h2>
 <form id="add-review-form" method="POST"
     action="/recipes/<%= recipe._id %>/reviews">
     <label>Review:</label>
@@ -35,5 +41,14 @@
     </select>
   <input type="submit" value="Add Review">
 </form>
+
+<% if (recipe.reviews.length) { %>
+    <% recipe.reviews.forEach(function(review) { %>
+        <div><%= review.review %></div>
+        <div><%= review.rating %></div>
+    <% }) %>
+<% } else { %>
+    <h3>No reviews</h3>
+<% } %>
 
 <%- include('../partials/footer') %>

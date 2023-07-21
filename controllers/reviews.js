@@ -19,9 +19,10 @@ async function deleteReview(req, res) {
 
 async function create(req, res) {
   const recipe = await Recipe.findById(req.params.id);
-
+  console.log(recipe)
   req.body.user = req.user._id;
   req.body.userName = req.user.name;
+
   recipe.reviews.push(req.body);
 
   try {
@@ -30,4 +31,6 @@ async function create(req, res) {
       console.log(err);
   }
   res.redirect(`/recipes/${recipe._id}`);
+
+  
 }
