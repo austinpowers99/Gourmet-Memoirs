@@ -44,7 +44,7 @@
 
 <% if (recipe.reviews.length) { %>
     <% recipe.reviews.forEach(function(review) { %>
-        <div><%= review.review %></div>
+        <div><%= review.content %></div>
         <div><%= review.rating %></div>
     <% }) %>
 <% } else { %>
