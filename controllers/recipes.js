@@ -16,6 +16,7 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
+    req.body.user = req.user._id
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
@@ -34,7 +35,7 @@ function newRecipe(req, res) {
 }
 
 async function show(req, res) {
-    const recipe = await Recipe.findById(req.params.id);
+    const recipe = await Recipe.findById(req.params.id).populate('user');
     console.log(recipe)
     res.render('recipes/show', { title: 'Recipe Details', recipe });
 }

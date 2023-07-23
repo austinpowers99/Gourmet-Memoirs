@@ -20,15 +20,17 @@
     <div><%= recipe.recipe %></div>
 </section>
 <br>
-<form action="/recipes/<%= recipe._id %>?_method=DELETE"
-    class="delete-form" method="POST">
-    <button type="submit">Remove recipe</button>
-</form>
-<br>
-<form action="/recipes/<%= recipe._id %>/edit"
-     method="GET">
-    <button type="submit">Edit recipe</button>
-</form>
+<% if (user._id.equals(recipe.user._id)) { %>
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">Remove recipe</button>
+    </form>
+    <br>
+    <form action="/recipes/<%= recipe._id %>/edit"
+        method="GET">
+        <button type="submit">Edit recipe</button>
+    </form>
+<% } %>
 
 <br><br>
 <h2>Reviews</h2>

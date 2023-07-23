@@ -28,8 +28,12 @@ const recipeSchema = new Schema ({
     difficulty: String,
     servings: String,
     ingredients: String,
-    recipe: String,
-    reviews: [reviewSchema]
+    instructions: String,
+    reviews: [reviewSchema],
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
 }, {
     timestamps:true
 });
