@@ -2,15 +2,15 @@
 
 Welcome to Gourmet Memoirs, a web app for food enthusiasts and home cooks to cherish their culinary experiences, preserve treasured recipes, and discover delightful new dishes. Whether you're a seasoned chef or an aspiring cook, Gourmet Memoirs is here to elevate your cooking adventures to new heights.
 
-# Getting Started:
+## Getting Started:
 Click the link  👉🏼  [Gourmet Memoirs](https://gourmet-memoirs-cba51dde722d.herokuapp.com/)
 
-# Features:
+## Features:
 - Secure Login with Google OAuth.
 - User friendly display.
 - Create your own recipes, find new ones, and share them with those around you!
 
-# Preview
+## Preview
 Home screen
 <img width="1103" alt="Screenshot 2023-07-17 at 9 22 57 PM 2" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/3b2f784f-4c7a-40d1-b0ad-27673978192d">
 
@@ -23,7 +23,7 @@ Create a new recipe
 Logged out Page
 <img width="1103" alt="Screenshot 2023-07-17 at 10 24 18 PM" src="https://github.com/austinpowers99/Gourmet-Memoirs/assets/135395052/5a20f151-1d21-4dcb-a2de-5cc45d57f5de">
 
-# 💥 Technologies Used
+## 💥 Technologies Used
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
@@ -34,7 +34,6 @@ Logged out Page
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
-# ✨ Future updates & Icebox Items:
+## ✨ Future updates & Icebox Items:
 - Add Add a schema for ingredients and another for allergy friendly recipes.
 - Add a Category section for easier search.
-- Have a fully functional section for All Reviews.
