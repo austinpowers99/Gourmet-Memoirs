@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <div>Name: </div>
+    <div>Recipe name: </div>
     <div><%= recipe.recipeName %></div>
     <br>
     <div>Servings: </div>
@@ -16,8 +16,8 @@
     <div>Difficulty: </div>
     <div><%= recipe.difficulty %></div>
     <br>
-    <div>Recipe: </div>
-    <div><%= recipe.recipe %></div>
+    <div>Instructions: </div>
+    <div><%= recipe.instructions %></div>
 </section>
 <br>
 <% if (user._id.equals(recipe.user._id)) { %>

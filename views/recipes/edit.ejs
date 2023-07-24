@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-    <label>Name:</label>
+    <label>Recipe name:</label>
         <input type="text" name="recipeName" value="<%= recipe.recipeName %>">
     <br><br>
     <label>Servings:</label>
@@ -13,8 +13,8 @@
     <label>Ingredients:</label>
         <textarea name="ingredients"><%= recipe.ingredients %></textarea>
     <br><br>
-    <label>Recipe:
-        <textarea name="recipe"><%= recipe.recipe %></textarea>
+    <label>Instructions:
+        <textarea name="recipe"><%= recipe.instructions %></textarea>
     </label><br><br>
     <label>Difficulty:</label>
     <select name="difficulty">
